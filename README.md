@@ -15,6 +15,8 @@
 - Install [fastspar](https://github.com/scwatts/fastspar) first.
 
 ```
+# ASV presents at least 50% of samples was picked
+
 fastspar --iterations 50 --exclude_iterations 20 --otu_table filter.asv.xls  --correlation median_correlation.tsv --covariance median_covariance.tsv
 
 mkdir bootstrap_counts
@@ -25,4 +27,8 @@ cd bootstrap_counts && ls *tsv | xargs -n 1   -I %  fastspar --otu_table % --cor
 
 fastspar_pvalues --otu_table filter.asv.xls --correlation median_correlation.tsv --prefix bootstrap_correlation/cor_fake_data_ --permutations 1000 --outfile pvalues.tsv
 ```
+
+## 4. R code for visualization
+
+- see [here]()
 
